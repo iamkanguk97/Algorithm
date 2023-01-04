@@ -1,4 +1,5 @@
 # 정렬 PART3 - 강욱 Version) 안테나
+# 이 코드는 시간초과....!
 
 n = int(input())   # 집의 수
 house = list(map(int, input().split()))   # 집의 위치
