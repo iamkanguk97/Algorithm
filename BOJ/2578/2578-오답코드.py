@@ -1,6 +1,8 @@
 """
 백준 2578번: 빙고
 https://www.acmicpc.net/problem/2578
+
+오답이유) 나도 진짜 잘 모르겠다 도대체
 """
 import sys
 input = sys.stdin.readline
