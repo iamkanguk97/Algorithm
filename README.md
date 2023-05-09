@@ -1,7 +1,5 @@
 # Algorithm
 
----
-
 - [이것이 취업을 위한 코딩테스트다 with 파이썬](https://github.com/ndb796/python-for-coding-test)
 - [Baekjoon Online Judge](https://www.acmicpc.net/)
 - [코딩테스트 대비 문제집 with Baekjoon](https://github.com/tony9402/baekjoon)
