@@ -25,6 +25,18 @@
 > 좋은 자료를 공유해주신 [Covenant](https://covenant.tistory.com/141)님 감사합니다!<br>
 > 제가 문제 풀면서 어려웠던 부분 정리랑 Covenant님의 용감하게 시작하는 코딩테스트 시리즈를 참고해서 작성했습니다 :)
 
+## Index
+
+1. [나누어서 입력받기 + 입/출력 가속](#나누어서-입력받기-+-입/출력-가속)
+2. [배열 입출력](#배열-입출력)
+3. [문자열](#문자열)
+4. [배열](#배열)
+5. [파이썬에서의 삼항 연산자](#파이썬에서의-삼항-연산자)
+6. [파이썬 내장함수 enumerate와 zip](#파이썬-내장함수-enumerate와-zip)
+7. [파이썬의 any와 all](#파이썬의-any와-all)
+
+<br>
+
 ### 1. 나누어서 입력받기 + 입/출력 가속
 
 #### 나누어서 입력받기
@@ -227,3 +239,65 @@ else:
 # 위의 코드를 이렇게 간단하게!!
 res = a if a > b else b
 ```
+
+### 6. 파이썬 내장함수 enumerate와 zip
+
+#### enumerate
+
+- `보통 인덱스와 원소를 동시에 접근하면서 반복문 루프를 돌릴 때 많이 사용한다.`
+- `for문처럼 반복되는 구간에서 객체가 현재 어느 위치에 있는지 알려주는 인덱스 값이 필요할 때 사용하면 유용하다.`
+
+```python
+for idx, letter in enumerate(['A', 'B', 'C']):
+    print(idx, letter)
+
+# 0 A
+# 1 B
+# 2 C
+```
+
+한가지 추가꿀팁으로 enumerate는 시작 인덱스를 0부터 시작하는데 `start` 속성을 추가해주면 시작하는 숫자를 수정할 수 있다.
+
+```python
+for idx, letter in enumerate(['A', 'B', 'C'], start=1):
+    print(idx, letter)
+
+# 1 A
+# 2 B
+# 3 C
+```
+
+#### zip (`zip(*iterable)`)
+
+- 여러개의 iterable 객체를 인자로 받고 각 객체가 담고있는 원소를 `tuple` 형태로 접근할 수 있는 iterator를 반환
+- iterable 객체들의 길이가 다를 경우 가장 짧은 객체 기준으로 zip 객체가 만들어짐.
+
+```python
+nums = [1, 2, 3]
+letters = ['A', 'B', 'C']
+for p in zip(nums, letters):
+    print(p)
+
+# (1, 'A')
+# (2, 'B')
+# (3, 'C')
+```
+
+추가로 zip을 풀어버릴수도 있다.
+
+```python
+nums = (1, 2, 3)
+letters = ('A', 'B', 'C')
+p = list(zip(nums, letters))   # [(1, 'A'), (2, 'B'), (3, 'C')]
+
+nums, letters = zip(*p)
+print(nums)   # (1, 2, 3)
+print(letters)   # ('A', 'B', 'C')
+```
+
+`zip 메서드는 보통 병렬 처리 또는 dictionary 타입으로 변환할 때 많이 사용한다.`
+
+### 7. 파이썬의 any와 all
+
+- `any`: 요소 중에 하나라도 True인게 있으면 True
+- `all`: 요소 모두 True여야 True 반환
