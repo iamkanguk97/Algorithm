@@ -307,3 +307,4 @@ print(letters)   # ('A', 'B', 'C')
 ## Python 추가 지식
 
 - [Deque vs List 속도 차이](https://wellsw.tistory.com/122)
+- [파이썬 문법이 잘 정리되어 있는 블로그](https://www.dongyeon1201.kr/d265b6e8-dd92-4bef-83e7-1280eda02cad)
