@@ -1,3 +1,8 @@
+"""
+백준 1913 (S3): 달팽이
+https://www.acmicpc.net/problem/1913
+"""
+
 n = int(input())
 find = int(input())
 find_x, find_y = -1, -1  # 찾으려는 값 좌표
