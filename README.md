@@ -35,6 +35,7 @@
 6. [파이썬 내장함수 enumerate와 zip](#6.파이썬-내장함수-enumerate와-zip)
 7. [파이썬의 any와 all](#7.파이썬의-any와-all)
 8. [알파벳을 숫자로 변환 (ord와 chr)](<#8.알파벳을-숫자로-변환-(ord와-chr)>)
+9. [순열과 조합](#9.순열과-조합)
 
 <br>
 
@@ -321,6 +322,46 @@ print(letters)   # ('A', 'B', 'C')
 data = int(ord('b')) - int(ord('a')) + 1
 data2 = int(ord('b'.upper())) - 64   # 대문자로 바꿔주고 64를 빼줌
 ```
+
+### 9. 순열과 조합 (Permutation + Combination)
+
+#### 라이브러리를 사용하지 않는 방법 (조합)
+
+이중 for문을 가지고 nC2를 구현하는 방법은?
+
+```python
+for i in range(0, N-1):
+    for j in range(i+1, N):
+        print(i, j)
+```
+
+이렇게 하면 간단하게 구할수 있지만 만약에 nC3, nC4 가 되면 경우의 수가 많아지면서 한계에 달하게 된다.
+
+#### itertools을 사용한 조합
+
+위의 방법이 아닌 파이썬에서는 아주 간단하게 조합을 구현할 수 있다.
+
+```python
+from itertools import combinations
+print(list(combinations([1, 2, 3, 4], 3)))
+```
+
+combinations의 `첫 번재 인자에는 배열`, 두 번째 인자에서는 nCm에서 `m`에 해당하는 값을 넣어주면 된다.
+출력결과는 `[(1, 2, 3), (1, 2, 4), (1, 3, 4), (2, 3, 4)]`가 된다.
+
+#### itertools을 사용한 순열
+
+순열도 사용방법이 조합과 동일하다!
+
+#### 참고사항
+
+중복순열과 중복조합이 있다.
+
+- 중복순열은 `from itertools import product`
+- 중복조합은 `from itertools import combinations_with_replacement`
+
+이거는 피셜인데 코딩테스트에서는 중복순열 및 중복조합을 사용해야만 문제가 풀리는 경우는 거의 없다고 한다.
+참고용으로 알아두기만 하자!
 
 <br>
 
