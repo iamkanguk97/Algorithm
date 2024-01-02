@@ -1,0 +1,12 @@
+-- 프로그래머스 SQL 고득점 KIT (JOIN)
+-- https://school.programmers.co.kr/learn/courses/30/lessons/133027
+
+SELECT FH.FLAVOR AS FLAVOR
+FROM FIRST_HALF AS FH
+    INNER JOIN (
+        SELECT FLAVOR, SUM(TOTAL_ORDER) AS TOTAL_ORDER
+        FROM JULY
+        GROUP BY FLAVOR        
+    ) AS J ON FH.FLAVOR = J.FLAVOR
+ORDER BY J.TOTAL_ORDER + FH.TOTAL_ORDER DESC
+LIMIT 3;
